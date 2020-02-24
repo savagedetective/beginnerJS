@@ -6,3 +6,14 @@ console.log(divs);
 
 const imgs = document.querySelectorAll('.item img');
 console.log(imgs);
+
+const heading = document.querySelector('h2');
+console.log(heading.textContent);
+console.log(heading.innerText);
+
+// adding pizzas to html
+const pizzaList = document.querySelector('.pizza');
+console.log(pizzaList.textContent);
+// pizzaList.textContent = `${pizzaList.textContent} 🍕`;
+// the above can be slow
+pizzaList.insertAdjacentText('beforeend', '🍕');
