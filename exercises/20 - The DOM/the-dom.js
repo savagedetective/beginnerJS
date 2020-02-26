@@ -20,7 +20,7 @@
 // // the above can be slow
 // pizzaList.insertAdjacentText('beforeend', '🍕');
 
-// video 23
+// video 23 and 24
 
 const pic = document.querySelector('.nice');
 pic.classList.add('open');
@@ -36,3 +36,10 @@ function toggleRound() {
 }
 
 pic.addEventListener('click', toggleRound);
+
+pic.addEventListener('load', function() {
+  console.log(pic.naturalWidth);
+});
+
+pic.alt = 'miscellaneous image';
+console.log(pic.alt);
