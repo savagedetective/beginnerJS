@@ -46,8 +46,19 @@ window.addEventListener(
   { capture: true }
 );
 
+// const photoEl = document.querySelector('.photo');
+// photoEl.addEventListener('mousemove', function(event) {
+//   console.log(event.currentTarget);
+//   console.log(this);
+// });
+
 const photoEl = document.querySelector('.photo');
-photoEl.addEventListener('mousemove', function(event) {
-  console.log(event.currentTarget);
-  console.log(this);
-});
+
+photoEl.addEventListener('click', handlePhotoClick);
+photoEl.addEventListener('keyup', handlePhotoClick);
+
+function handlePhotoClick(event) {
+  if (event.type === 'click' || event.key === 'Enter') {
+    console.log('you clicked on the photo');
+  }
+}
