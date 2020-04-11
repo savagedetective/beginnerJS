@@ -9,28 +9,26 @@
 </head>
 
 <body>
-  * empty array
-  * empty object
-  * 1
-  * -10
-  * full string
-  * a string of "0"
-  * 0
-  * undefined variable
-  * Variable set to null
-  * a variable set to `"hello" - 10` NaN
-  * empty string
+  * empty array - truthy
+  * empty object - truthy
+  * 1 - truthy
+  * -10 - truthy
+  * full string - truthy
+  * a string of "0" - truthy
+  * 0 - falsy
+  * undefined variable - falsy
+  * Variable set to null - falsy
+  * a variable set to `"hello" - 10` NaN - falsy
+  * empty string - falsy
 
   <script>
-
     function slugify(sentence, lowercase) {
-      let slug = sentence.replace(/\s/g, '-');
+      const slug = sentence.replace(/\s/g, '-');
       if (lowercase) {
         return slug.toLowerCase();
       }
       return slug;
     }
-
   </script>
 </body>
 
