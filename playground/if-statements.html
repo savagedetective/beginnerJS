@@ -29,6 +29,29 @@
       }
       return slug;
     }
+
+    // conditiona abuse
+    function showAdmin() {
+      console.log('showing admin bar');
+    }
+
+    const isAdmin = true;
+
+    isAdmin ? showAdmin() : null;
+
+    // is the same as
+
+    isAdmin && showAdminBar();
+
+    // is the same as
+
+    if (isAdmin) showAdmin();
+
+    // is the same as
+
+    if (isAdmin) {
+      showAdmin();
+    }
   </script>
 </body>
 
