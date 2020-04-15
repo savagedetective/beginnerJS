@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Intervals and Timers</title>
+    <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+    <script>
+        // function buzzer() {
+        //     console.log('ENGGGGG!');
+        // }
+        // setTimeout(function () {
+        //     console.log("it's been half a second");
+        // }, 500);
+
+        // setTimeout(buzzer, 1000);
+
+        function destroy() {
+            document.body.innerHTML = `<p>DESTROYED</p>`;
+        }
+
+        const bombTimer = setTimeout(destroy, 5000);
+
+        window.addEventListener('click', function () {
+            console.log('You clicked and saved the world.');
+            clearTimeout(bombTimer);
+        });
+    </script>
+</body>
+
+</html>
