@@ -11,8 +11,22 @@
 <body>
     <input type="text" name="first" value="wes">
 
-    <!-- /<script src="https://unpkg.com/lodash"></script> -->
-    <script>    </script>
+    <script src="https://unpkg.com/lodash"></script>
+    <script>
+        const meatInventory = {
+            bacon: 2,
+            sausage: 3,
+        };
+
+        const veggieInventory = {
+            lettuce: 5,
+            tomatoes: 3,
+        };
+
+        const inventory = { ...meatInventory, ...veggieInventory };
+
+        console.log(inventory);
+    </script>
 </body>
 
 </html>
