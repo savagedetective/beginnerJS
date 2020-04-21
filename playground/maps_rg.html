@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Maps</title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+  <ul class="prizes"></ul>
+  <script>
+    const myMap = new Map();
+    // set
+    myMap.set('name', 'ritchie');
+    console.log(myMap);
+
+    const score = 100;
+    const prizes = new Map();
+    prizes.set(100, 'bear');
+    prizes.set(200, 'dog');
+    prizes.set(300, 'car');
+    console.log(`you win a ${prizes.get(score)}`);
+
+    const ul = document.querySelector('.prizes');
+    for (const [points, prize] of prizes) {
+      console.log(prize);
+
+      const li = `<li>${points}: ${prize}</li>`;
+      ul.innerHTML += li;
+    }
+  </script>
+</body>
+
+</html>
