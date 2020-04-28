@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>
+
+    </title>
+    <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+    <script>
+        const names = ['name one', 'name two', 'name three'];
+        console.log(names[1]);
+        console.log(names.length - 1);
+
+        names.push('name four'); // adds item to back of array
+        console.log(names);
+
+        // can also do this
+        const names2 = [...names, 'name five'];
+        console.log(names2);
+
+        // to add item to front of array
+        names.unshift('name zero');
+
+        // or to not alter the original
+        const names3 = ['name negative one', ...names];
+        console.log(names3);
+
+        // adding items in to middle of array
+        const bikes = ['bianchi', 'miele', 'panasonic', 'miyata'];
+        console.log(bikes);
+        const newBikes = [...bikes.slice(0, 2), 'benotto', ...bikes.slice(2)];
+        console.log(newBikes);
+
+        // or to remove one from the middle, in this case panasonic
+        const bikesThree = [...newBikes.slice(0, 3), ...newBikes.slice(4)];
+        console.log(bikesThree);
+
+        // // mutation method
+        // const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+        // // numbers.reverse();
+        // console.log(numbers); // the original numbers array will be mutated to the reversed array, overwriting it
+        // // to do this without botching the original array:
+        // const numbersReversed = [...numbers];
+        // numbersReversed.reverse();
+        // console.log(numbersReversed);
+        // // immutable
+        // const sliceOfArray = numbers.slice(2, 4);
+        // console.log(sliceOfArray);
+        // console.log(numbers);
+    </script>
+</body>
+
+</html>
