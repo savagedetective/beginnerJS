@@ -127,15 +127,49 @@
     */
 
     // find the first rating that talks about a burger with find()
-    // find all ratings that are above 2 with filter()
-    // find all ratings that talk about a burger with filter()
-    // Remove the one star rating however you like!
 
+    // const burgRating = feedback.find(rating => rating.comment.includes('burg'));
+    // console.log(burgRating);
+
+    function findByWord(word) {
+      return function (singleFeedback) {
+        return singleFeedback.comment.includes(word);
+      };
+    }
+
+    const burgerRating = feedback.find(findByWord('burg'));
+    console.log(burgerRating);
+
+    const smoothieRating = feedback.find(findByWord('Smoothie'));
+    console.log(smoothieRating);
+
+    // find all ratings that are above 2 with filter()
+
+    const ratingFilter = feedback.filter(feedback => feedback.rating > 2);
+    console.log(ratingFilter);
+    // find all ratings that talk about a burger with filter()
+    const findBurgerMention = feedback.filter(singleFeedback =>
+      singleFeedback.comment.toLowerCase().includes('burg')
+    );
+    console.log(findBurgerMention);
+    // Remove the one star rating however you like!
+    const legitRatings = feedback.filter(single => single.rating !== 1);
+    console.table(legitRatings);
     // check if there is at least 5 of one type of meat with some()
+    const atLeastFiveMeats = Object.values(meats).some(value => value >= 5);
+    console.log(atLeastFiveMeats);
+
     // make sure we have at least 3 of every meat with every()
+    const atLeastFiveEachMeats = Object.values(meats).every(value => value >= 3);
+    console.log(atLeastFiveEachMeats);
     // sort the toppings alphabetically with sort()
+    console.log(toppings.sort());
     // sort the order totals from most expensive to least with .sort()
+    const totalsSorted = orderTotals.sort((el1, el2) => el1 - el2);
+    console.log(totalsSorted);
     // Sort the prices with sort()
+    const pricesSorted = Object.values(prices).sort((el1, el2) => el1 - el2);
+    console.log(pricesSorted);
 
     /*
       Looping Methods (next)
