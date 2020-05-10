@@ -144,6 +144,46 @@
     }
 
     toppings.forEach(logTopping);
+
+    console.clear();
+
+    // map
+    function addArms(face) {
+      return `👋 ${face} 👋`;
+    }
+
+    const toys = faces.map(addArms);
+    console.log(toys);
+
+    function addLastName(name) {
+      return `${name} lastName`;
+    }
+    function capitalize(word) {
+      return `${word[0].toUpperCase()}${word.slice(1)}`;
+    }
+
+    const fullNames = ['ritchie', 'doug', 'delilah']
+      .map(capitalize)
+      .map(addLastName);
+    console.log(fullNames);
+
+    const cleanPeople = people.map(function (person) {
+      console.log(person);
+      // get birthdays/
+      const birthday = new Date(person.birthday).getTime();
+      const timeNow = Date.now();
+      const age = Math.floor((timeNow - birthday) / (1000 * 60 * 60 * 24 * 365));
+      console.log(birthday, timeNow);
+      console.log(age);
+      // figure out age
+      // return full name and age in an object
+      return {
+        age,
+        name: `${person.names.first} ${person.names.last}`,
+      };
+    });
+
+    console.table(cleanPeople);
   </script>
 </body>
 
